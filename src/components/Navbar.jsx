@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'About', href: '#about' },
-    { name: 'Product', href: '#ProductPreview' },
+    { name: 'Product', href: '#product' },
     { name: 'How it works', href: '#how-it-works' },
   ];
 
@@ -58,7 +58,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
             <a
-              href="#preview"
+              href="#product"
               className="inline-flex items-center justify-center bg-foreground text-background px-4 py-2 label-mono hover:text-background hover:bg-foreground/90 transition-colors group border border-foreground"
             >
               Start planning
@@ -109,7 +109,7 @@ export default function Navbar() {
               ))}
               <div className="pt-4 border-t border-border">
                 <a
-                  href="#preview"
+                  href="#product"
                   className="inline-flex w-full items-center justify-center bg-foreground text-background px-4 py-3 label-mono hover:bg-foreground/90 transition-colors border border-foreground"
                   onClick={() => setMobileMenuOpen(false)}
                 >

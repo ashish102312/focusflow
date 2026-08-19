@@ -19,7 +19,7 @@ export default function Cta() {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
-              href="#hero"
+              href="#product"
               className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 label-mono hover:bg-foreground/90 transition-all group border border-foreground"
             >
               Start planning

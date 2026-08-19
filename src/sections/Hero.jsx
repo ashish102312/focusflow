@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { HandWrittenTitle } from '../components/ui/hand-writing-text';
+import { CrowdCanvas } from '../components/ui/crowd-canvas';
 
 export default function Hero() {
   const containerVariants = {
@@ -29,20 +30,22 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative pt-32 pb-20 sm:pt-40 sm:pb-24 lg:pb-32 flex items-center min-h-[90vh]"
+      className="relative pt-32 pb-20 sm:pt-40 sm:pb-24 lg:pb-32 flex items-center min-h-screen overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      {/* Background Crowd Canvas */}
+      <div className="absolute bottom-0 left-0 right-0 h-[45vh] pointer-events-none z-0 opacity-40">
+        <CrowdCanvas src="/images/peeps/all-peeps.png" rows={15} cols={7} />
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <HandWrittenTitle 
           title={
             <>Turn a busy day into a <em className="text-accent italic ml-3">clear plan.</em></>
           }
-          subtitle={
-            <>
-              FocusFlow brings your tasks, priorities, and daily goals into one focused workspace. 
-              <br className="hidden sm:block" />
-              Stop reacting and start orchestrating your day.
-            </>
-          }
+          subtitle={[
+            "FocusFlow brings your tasks, priorities, and daily goals into one focused workspace.",
+            "Stop reacting and start orchestrating your day."
+          ]}
         />
           
           <motion.div
@@ -52,7 +55,7 @@ export default function Hero() {
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
-              href="#preview"
+              href="#product"
               className="w-full sm:w-auto inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 label-mono hover:bg-foreground/90 transition-all group border border-foreground"
             >
               Start planning

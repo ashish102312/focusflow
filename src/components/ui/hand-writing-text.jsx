@@ -63,11 +63,36 @@ export function HandWrittenTitle({ title, subtitle }) {
                 {subtitle && (
                     <motion.div
                         className="mt-6 body-mono text-muted-foreground leading-relaxed max-w-2xl mx-auto"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.5, duration: 0.8 }}
+                        variants={{
+                            hidden: { opacity: 1 },
+                            visible: {
+                                opacity: 1,
+                                transition: { delayChildren: 1.5, staggerChildren: 0.02 }
+                            }
+                        }}
+                        initial="hidden"
+                        animate="visible"
                     >
-                        {subtitle}
+                        {Array.isArray(subtitle) ? (
+                            <>
+                                {subtitle[0].split("").map((char, i) => (
+                                    <motion.span key={`line1-${i}`} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
+                                        {char}
+                                    </motion.span>
+                                ))}
+                                <br className="hidden sm:block" />
+                                <span className="sm:hidden"> </span>
+                                {subtitle[1].split("").map((char, i) => (
+                                    <motion.span key={`line2-${i}`} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
+                                        {char}
+                                    </motion.span>
+                                ))}
+                            </>
+                        ) : (
+                            <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 0.8 }}>
+                                {subtitle}
+                            </motion.span>
+                        )}
                     </motion.div>
                 )}
             </div>

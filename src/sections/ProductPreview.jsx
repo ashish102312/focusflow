@@ -20,7 +20,7 @@ export default function ProductPreview() {
   const progressPercentage = (completedCount / totalCount) * 100;
 
   return (
-    <section id="preview" className="py-24 sm:py-32 relative overflow-hidden">
+    <section id="product" className="py-24 sm:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
