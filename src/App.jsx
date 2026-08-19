@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
+import ProductPreview from './sections/ProductPreview';
 
 export default function App() {
   return (
@@ -8,12 +9,9 @@ export default function App() {
       
       <main>
         <Hero />
+        <ProductPreview />
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-96">
-          <section id="preview" className="h-screen flex items-center">
-            <h2 className="text-3xl font-bold">Product Preview</h2>
-          </section>
-
           <section id="how-it-works" className="h-screen flex items-center">
             <h2 className="text-3xl font-bold">How it Works</h2>
           </section>
