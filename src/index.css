@@ -47,4 +47,14 @@
   .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl, .shadow-2xl {
     box-shadow: none !important;
   }
+
+  .dark {
+    --color-background: #1A1917;
+    --color-surface: #1A1917;
+    --color-surface-hover: #4A4741;
+    --color-foreground: #E7E3DA;
+    --color-muted-foreground: #DCD7CB;
+    --color-border: rgba(231,227,218,0.16);
+    --color-accent: #9B3418;
+  }
 }

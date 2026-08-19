@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { RandomLetterSwap } from './ui/random-letter-swap';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,9 +48,9 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="label-mono text-muted-foreground hover:text-foreground transition-colors"
+                className="label-mono text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                {link.name}
+                <RandomLetterSwap label={link.name} />
               </a>
             ))}
           </nav>
@@ -100,10 +101,10 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="label-mono text-xl font-medium text-foreground py-4 border-b border-border hover:bg-surface-hover px-4"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {link.name}
+                  <RandomLetterSwap label={link.name} />
                 </a>
               ))}
               <div className="pt-4 border-t border-border">

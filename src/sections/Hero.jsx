@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { HandWrittenTitle } from '../components/ui/hand-writing-text';
 
 export default function Hero() {
   const containerVariants = {
@@ -31,28 +32,23 @@ export default function Hero() {
       className="relative pt-32 pb-20 sm:pt-40 sm:pb-24 lg:pb-32 flex items-center min-h-[90vh]"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="max-w-3xl mx-auto"
-        >
-          <motion.h1
-            variants={itemVariants}
-            className="text-5xl sm:text-6xl lg:text-7xl font-normal text-foreground"
-          >
-            Turn a busy day into a <em className="text-accent italic">clear plan.</em>
-          </motion.h1>
-          
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 body-mono text-muted-foreground leading-relaxed max-w-2xl mx-auto"
-          >
-            FocusFlow brings your tasks, priorities, and daily goals into one focused workspace.
-          </motion.p>
+        <HandWrittenTitle 
+          title={
+            <>Turn a busy day into a <em className="text-accent italic ml-3">clear plan.</em></>
+          }
+          subtitle={
+            <>
+              FocusFlow brings your tasks, priorities, and daily goals into one focused workspace. 
+              <br className="hidden sm:block" />
+              Stop reacting and start orchestrating your day.
+            </>
+          }
+        />
           
           <motion.div
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.8 }}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
@@ -71,7 +67,6 @@ export default function Hero() {
               See how it works
             </a>
           </motion.div>
-        </motion.div>
       </div>
     </section>
   );
