@@ -40,15 +40,13 @@ export function HandWrittenTitle({ title, subtitle }) {
                         {title}
                     </motion.h1>
                     <motion.svg
-                        width="120"
-                        height="120"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="1.2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="text-muted-foreground absolute -right-16 md:-right-24 bottom-0 md:-bottom-4 pointer-events-none"
+                        className="w-16 h-16 md:w-[120px] md:h-[120px] text-muted-foreground absolute -right-6 md:-right-28 -bottom-2 md:-bottom-4 pointer-events-none"
                         initial="hidden"
                         animate={isLoaded ? "visible" : "hidden"}
                     >

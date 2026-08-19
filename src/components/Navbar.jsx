@@ -101,7 +101,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="label-mono text-xl font-medium text-foreground py-4 border-b border-border hover:bg-surface-hover px-4"
+                  className="block label-mono text-xl font-medium text-foreground py-4 border-b border-border hover:bg-surface-hover px-4"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <RandomLetterSwap label={link.name} />
