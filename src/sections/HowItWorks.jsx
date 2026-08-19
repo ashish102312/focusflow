@@ -23,7 +23,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-24 sm:py-32 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="text-4xl display-serif text-foreground sm:text-5xl">
             How it works
           </h2>
         </div>
@@ -48,10 +48,10 @@ export default function HowItWorks() {
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-2xl display-serif text-foreground mb-3">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground body-mono">
                   {step.description}
                 </p>
                 

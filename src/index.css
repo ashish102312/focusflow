@@ -1,19 +1,50 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #000000;
-  --color-foreground: #ededed;
-  --color-surface: #0a0a0a;
-  --color-surface-hover: #171717;
-  --color-border: #262626;
-  --color-muted: #171717;
-  --color-muted-foreground: #a3a3a3;
-  --color-accent: #4f46e5;
-  --color-accent-foreground: #ffffff;
+  /* Warm editorial studio style */
+  --color-background: #E7E3DA;
+  --color-surface: #DCD7CB;
+  --color-surface-hover: rgba(26,25,23,0.05);
+  --color-foreground: #1A1917;
+  --color-ink: #1A1917;
+  --color-ink-secondary: #4A4741;
+  --color-muted-foreground: #6E6A61;
+  --color-accent: #9B3418;
+  --color-border: rgba(26,25,23,.16);
+
+  --font-sans: 'Azeret Mono', monospace;
+  --font-serif: 'Instrument Serif', serif;
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground antialiased selection:bg-accent selection:text-white;
+    @apply bg-background text-foreground antialiased selection:bg-accent/20 selection:text-foreground font-sans;
+    font-size: 12.5px;
+  }
+  
+  h1, h2, h3, h4, h5, h6, .display-serif {
+    @apply font-serif tracking-[-0.015em];
+  }
+  
+  /* Enforce sharp corners everywhere */
+  * {
+    border-radius: 0 !important;
+  }
+
+  /* Label styles */
+  .label-mono {
+    @apply font-sans uppercase font-medium tracking-[0.16em];
+    font-size: 11px;
+  }
+
+  /* Body copy */
+  .body-mono {
+    @apply font-sans normal-case;
+    font-size: 12.5px;
+  }
+  
+  /* Hide shadows, glows, and gradients by overriding utilities */
+  .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl, .shadow-2xl {
+    box-shadow: none !important;
   }
 }

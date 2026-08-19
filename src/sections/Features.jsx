@@ -24,8 +24,8 @@ export default function Features() {
     <section id="features" className="py-24 sm:py-32 bg-background border-t border-border/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-accent">Intelligent focus</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="label-mono text-accent">Intelligent focus</h2>
+          <p className="mt-4 text-4xl sm:text-5xl display-serif text-foreground">
             Everything you need for a clear day
           </p>
         </div>
@@ -40,13 +40,13 @@ export default function Features() {
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 className="group flex flex-col items-start p-8 rounded-2xl bg-surface border border-border hover:border-border/80 transition-colors"
               >
-                <div className="rounded-lg bg-background p-3 ring-1 ring-border group-hover:ring-accent/50 transition-colors">
+                <div className="bg-background p-3 ring-1 ring-border group-hover:ring-accent/50 transition-colors">
                   <feature.icon className="h-6 w-6 text-foreground" aria-hidden="true" />
                 </div>
-                <dt className="mt-6 font-semibold text-foreground text-lg">
+                <dt className="mt-6 display-serif text-foreground text-2xl">
                   {feature.name}
                 </dt>
-                <dd className="mt-2 text-base leading-7 text-muted-foreground flex-auto">
+                <dd className="mt-2 body-mono text-muted-foreground flex-auto">
                   {feature.description}
                 </dd>
               </motion.div>

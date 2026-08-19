@@ -35,7 +35,7 @@ export default function Navbar() {
               <div className="w-6 h-6 rounded-md bg-foreground flex items-center justify-center">
                 <div className="w-2 h-2 rounded-full bg-primary" />
               </div>
-              <span className="text-lg font-semibold tracking-tight text-foreground">
+              <span className="text-xl display-serif text-foreground">
                 FocusFlow
               </span>
             </a>
@@ -47,7 +47,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="label-mono text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.name}
               </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <a
               href="#preview"
-              className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-4 py-2 text-sm font-medium hover:text-background hover:bg-foreground/90 transition-colors group"
+              className="inline-flex items-center justify-center bg-foreground text-background px-4 py-2 label-mono hover:text-background hover:bg-foreground/90 transition-colors group border border-foreground"
             >
               Start planning
               <span className="ml-1 transition-transform group-hover:translate-x-1">
@@ -109,7 +109,7 @@ export default function Navbar() {
               <div className="pt-4 border-t border-border">
                 <a
                   href="#preview"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-foreground text-background px-4 py-3 text-sm font-medium hover:bg-foreground/90 transition-colors"
+                  className="inline-flex w-full items-center justify-center bg-foreground text-background px-4 py-3 label-mono hover:bg-foreground/90 transition-colors border border-foreground"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Start planning →

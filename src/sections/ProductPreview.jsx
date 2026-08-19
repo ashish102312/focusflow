@@ -61,11 +61,11 @@ export default function ProductPreview() {
             {/* Main Content Area */}
             <div className="flex-1 p-6 md:p-10 bg-background overflow-y-auto">
               <div className="max-w-2xl">
-                <h2 className="text-2xl font-semibold tracking-tight text-foreground">Good afternoon</h2>
-                <p className="text-muted-foreground mt-1 text-sm">Here's what matters today.</p>
+                <h2 className="text-3xl display-serif text-foreground">Good afternoon</h2>
+                <p className="text-muted-foreground mt-1 body-mono">Here's what matters today.</p>
 
                 <div className="mt-10">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
+                  <h3 className="label-mono text-muted-foreground mb-4">
                     Today
                   </h3>
                   
@@ -99,7 +99,7 @@ export default function ProductPreview() {
                           </div>
                           <div className="flex-1">
                             <p
-                              className={`text-sm font-medium transition-all duration-300 ${
+                              className={`body-mono transition-all duration-300 ${
                                 task.completed ? 'text-foreground line-through opacity-50' : 'text-foreground'
                               }`}
                             >
@@ -114,7 +114,7 @@ export default function ProductPreview() {
                 </div>
 
                 <div className="mt-10">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
+                  <h3 className="label-mono text-muted-foreground mb-4">
                     Priority
                   </h3>
                   <div className="w-full bg-border rounded-full h-2 overflow-hidden">
@@ -125,7 +125,7 @@ export default function ProductPreview() {
                       transition={{ type: 'spring', stiffness: 50, damping: 15 }}
                     />
                   </div>
-                  <p className="text-xs text-muted-foreground mt-2">
+                  <p className="body-mono text-muted-foreground mt-2">
                     {completedCount} of {totalCount} tasks completed
                   </p>
                 </div>
