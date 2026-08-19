@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
+import About from './sections/About';
 import ProductPreview from './sections/ProductPreview';
 import Features from './sections/Features';
 import HowItWorks from './sections/HowItWorks';
@@ -12,8 +13,9 @@ export default function App() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       
-      <main>
+      <main className="divide-y divide-border">
         <Hero />
+        <About />
         <ProductPreview />
         <Features />
         <HowItWorks />

@@ -32,9 +32,9 @@ export default function ProductPreview() {
           {/* App Header (Mac-like) */}
           <div className="flex items-center px-4 py-3 border-b border-border bg-surface/50">
             <div className="flex space-x-2">
-              <div className="w-3 h-3 rounded-full bg-border" />
-              <div className="w-3 h-3 rounded-full bg-border" />
-              <div className="w-3 h-3 rounded-full bg-border" />
+              <div className="w-3 h-3 bg-[#FF5F56]" style={{ borderRadius: '50%' }} />
+              <div className="w-3 h-3 bg-[#FFBD2E]" style={{ borderRadius: '50%' }} />
+              <div className="w-3 h-3 bg-[#27C93F]" style={{ borderRadius: '50%' }} />
             </div>
             <div className="mx-auto text-xs font-medium text-muted-foreground">FocusFlow</div>
           </div>

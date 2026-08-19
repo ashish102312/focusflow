@@ -16,17 +16,17 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Product', href: '#product' },
+    { name: 'About', href: '#about' },
+    { name: 'Product', href: '#ProductPreview' },
     { name: 'How it works', href: '#how-it-works' },
   ];
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b ${
-        isScrolled
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b ${isScrolled
           ? 'bg-surface/80 backdrop-blur-md border-border'
           : 'bg-transparent border-transparent'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
