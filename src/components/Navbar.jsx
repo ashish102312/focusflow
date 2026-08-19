@@ -48,7 +48,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="label-mono text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="label-mono text-base text-muted-foreground hover:text-foreground transition-all duration-300 inline-block hover:scale-110"
               >
                 <RandomLetterSwap label={link.name} />
               </a>

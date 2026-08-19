@@ -1,14 +1,28 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export function HandWrittenTitle({ title, subtitle }) {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        if (document.readyState === 'complete') {
+            setIsLoaded(true);
+        } else {
+            const handleLoad = () => setIsLoaded(true);
+            window.addEventListener('load', handleLoad);
+            return () => window.removeEventListener('load', handleLoad);
+        }
+    }, []);
+
     const draw = {
         hidden: { pathLength: 0, opacity: 0 },
         visible: {
             pathLength: 1,
             opacity: 1,
             transition: {
-                pathLength: { delay: 1.2, duration: 1.2, ease: "easeInOut" },
-                opacity: { delay: 1.2, duration: 0.3 },
+                // Remove the long delay since we are now waiting for the full page load
+                pathLength: { delay: 0.5, duration: 1.2, ease: "easeInOut" },
+                opacity: { delay: 0.5, duration: 0.3 },
             },
         },
     };
@@ -36,7 +50,7 @@ export function HandWrittenTitle({ title, subtitle }) {
                         strokeLinejoin="round"
                         className="text-muted-foreground absolute -right-16 md:-right-24 bottom-0 md:-bottom-4 pointer-events-none"
                         initial="hidden"
-                        animate="visible"
+                        animate={isLoaded ? "visible" : "hidden"}
                     >
                         <defs>
                             <filter id="pencil" x="-20%" y="-20%" width="140%" height="140%">
