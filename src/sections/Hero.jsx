@@ -59,7 +59,7 @@ export default function Hero() {
           >
             <a
               href="#preview"
-              className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-foreground text-primary px-8 py-3.5 text-base font-medium hover:bg-muted-foreground transition-all group shadow-sm hover:shadow-md"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-foreground text-background px-8 py-3.5 text-base font-medium hover:bg-foreground/90 transition-all group shadow-sm hover:shadow-md"
             >
               Start planning
               <span className="ml-2 transition-transform group-hover:translate-x-1">

@@ -23,7 +23,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b ${
         isScrolled
-          ? 'bg-primary/80 backdrop-blur-md border-border'
+          ? 'bg-surface/80 backdrop-blur-md border-border'
           : 'bg-transparent border-transparent'
       }`}
     >
@@ -58,7 +58,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <a
               href="#preview"
-              className="inline-flex items-center justify-center rounded-full bg-foreground text-primary px-4 py-2 text-sm font-medium hover:bg-muted-foreground transition-colors group"
+              className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-4 py-2 text-sm font-medium hover:text-background hover:bg-foreground/90 transition-colors group"
             >
               Start planning
               <span className="ml-1 transition-transform group-hover:translate-x-1">
@@ -109,7 +109,7 @@ export default function Navbar() {
               <div className="pt-4 border-t border-border">
                 <a
                   href="#preview"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-foreground text-primary px-4 py-3 text-sm font-medium hover:bg-muted-foreground transition-colors"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-foreground text-background px-4 py-3 text-sm font-medium hover:bg-foreground/90 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Start planning →

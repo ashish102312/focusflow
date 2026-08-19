@@ -27,10 +27,10 @@ export default function ProductPreview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto max-w-5xl rounded-xl border border-border bg-primary shadow-2xl overflow-hidden"
+          className="relative mx-auto max-w-5xl rounded-xl border border-border bg-surface shadow-2xl overflow-hidden"
         >
           {/* App Header (Mac-like) */}
-          <div className="flex items-center px-4 py-3 border-b border-border bg-primary/50">
+          <div className="flex items-center px-4 py-3 border-b border-border bg-surface/50">
             <div className="flex space-x-2">
               <div className="w-3 h-3 rounded-full bg-border" />
               <div className="w-3 h-3 rounded-full bg-border" />
@@ -59,7 +59,7 @@ export default function ProductPreview() {
             </div>
 
             {/* Main Content Area */}
-            <div className="flex-1 p-6 md:p-10 bg-primary overflow-y-auto">
+            <div className="flex-1 p-6 md:p-10 bg-background overflow-y-auto">
               <div className="max-w-2xl">
                 <h2 className="text-2xl font-semibold tracking-tight text-foreground">Good afternoon</h2>
                 <p className="text-muted-foreground mt-1 text-sm">Here's what matters today.</p>
