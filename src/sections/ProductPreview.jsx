@@ -1,7 +1,24 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Inbox, CheckCircle2, Circle, MoreHorizontal } from 'lucide-react';
 
 export default function ProductPreview() {
+  const [tasks, setTasks] = useState([
+    { id: 1, text: 'Finish assessment', completed: true },
+    { id: 2, text: 'Review project', completed: false },
+    { id: 3, text: 'Read documentation', completed: false },
+  ]);
+
+  const toggleTask = (id) => {
+    setTasks(tasks.map(task => 
+      task.id === id ? { ...task, completed: !task.completed } : task
+    ));
+  };
+
+  const completedCount = tasks.filter(t => t.completed).length;
+  const totalCount = tasks.length;
+  const progressPercentage = (completedCount / totalCount) * 100;
+
   return (
     <section id="preview" className="py-24 sm:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -53,38 +70,46 @@ export default function ProductPreview() {
                   </h3>
                   
                   <div className="space-y-3">
-                    {/* Task 1 */}
-                    <div className="group flex items-start gap-3 p-3 rounded-lg border border-border bg-muted/10 hover:bg-muted/30 transition-colors cursor-pointer">
-                      <div className="mt-0.5">
-                        <CheckCircle2 className="w-5 h-5 text-muted-foreground" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-sm font-medium text-foreground line-through opacity-50">Finish assessment</p>
-                      </div>
-                      <MoreHorizontal className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
-
-                    {/* Task 2 */}
-                    <div className="group flex items-start gap-3 p-3 rounded-lg border border-border bg-muted/10 hover:bg-muted/30 transition-colors cursor-pointer">
-                      <div className="mt-0.5">
-                        <Circle className="w-5 h-5 text-muted-foreground" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-sm font-medium text-foreground">Review project</p>
-                      </div>
-                      <MoreHorizontal className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
-
-                    {/* Task 3 */}
-                    <div className="group flex items-start gap-3 p-3 rounded-lg border border-transparent hover:border-border hover:bg-muted/10 transition-colors cursor-pointer">
-                      <div className="mt-0.5">
-                        <Circle className="w-5 h-5 text-muted-foreground" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-sm font-medium text-foreground">Read documentation</p>
-                      </div>
-                      <MoreHorizontal className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
+                    <AnimatePresence>
+                      {tasks.map((task) => (
+                        <motion.div
+                          key={task.id}
+                          layout
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className={`group flex items-start gap-3 p-3 rounded-lg border transition-all cursor-pointer ${
+                            task.completed
+                              ? 'border-border bg-muted/10 hover:bg-muted/30'
+                              : 'border-transparent hover:border-border hover:bg-muted/10'
+                          }`}
+                          onClick={() => toggleTask(task.id)}
+                        >
+                          <div className="mt-0.5">
+                            <motion.div
+                              initial={false}
+                              animate={{ scale: task.completed ? 1.1 : 1 }}
+                              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                            >
+                              {task.completed ? (
+                                <CheckCircle2 className="w-5 h-5 text-muted-foreground" />
+                              ) : (
+                                <Circle className="w-5 h-5 text-muted-foreground" />
+                              )}
+                            </motion.div>
+                          </div>
+                          <div className="flex-1">
+                            <p
+                              className={`text-sm font-medium transition-all duration-300 ${
+                                task.completed ? 'text-foreground line-through opacity-50' : 'text-foreground'
+                              }`}
+                            >
+                              {task.text}
+                            </p>
+                          </div>
+                          <MoreHorizontal className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </motion.div>
+                      ))}
+                    </AnimatePresence>
                   </div>
                 </div>
 
@@ -92,10 +117,17 @@ export default function ProductPreview() {
                   <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
                     Priority
                   </h3>
-                  <div className="w-full bg-border rounded-full h-2">
-                    <div className="bg-foreground h-2 rounded-full w-[33%]" />
+                  <div className="w-full bg-border rounded-full h-2 overflow-hidden">
+                    <motion.div
+                      className="bg-foreground h-full rounded-full"
+                      initial={{ width: 0 }}
+                      animate={{ width: `${progressPercentage}%` }}
+                      transition={{ type: 'spring', stiffness: 50, damping: 15 }}
+                    />
                   </div>
-                  <p className="text-xs text-muted-foreground mt-2">1 of 3 tasks completed</p>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    {completedCount} of {totalCount} tasks completed
+                  </p>
                 </div>
               </div>
             </div>
