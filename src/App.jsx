@@ -1,18 +1,16 @@
 import Navbar from './components/Navbar';
+import Hero from './sections/Hero';
 
 export default function App() {
   return (
     <div className="min-h-screen bg-primary">
       <Navbar />
       
-      {/* Temporary spacing to test scrolling and navbar states */}
-      <main className="pt-24 pb-96">
+      <main>
+        <Hero />
+        
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-96">
-          <section id="hero" className="h-screen flex items-center">
-            <h1 className="text-4xl font-bold">Hero Section</h1>
-          </section>
-          
-          <section id="product" className="h-screen flex items-center">
+          <section id="preview" className="h-screen flex items-center">
             <h2 className="text-3xl font-bold">Product Preview</h2>
           </section>
 
